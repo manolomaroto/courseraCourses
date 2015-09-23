@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guess the color</title>
+	<style type="text/css">
+		body{
+			background: black;
+		}
+	</style>
+</head>
+<body onload="start_game()">
+	<script type="text/javascript">
+	
+	var target;
+	var user_guess;
+	var finished = false;
+	var guesses = 0;
+	var colors = ["blue","cyan","gold","gray","green","magenta","orange","red","white","yellow"];
+	var body = document.getElementsByTagName("body")[0];
+	
+
+	function start_game(){
+		var number = Math.floor(Math.random() * 10);
+		target = colors[number];
+
+		while(!finished){
+		user_guess = prompt("I'm thinking of one of those colors: \n\nblue, cyan, gold, gray, green, magenta, orange, red, white, yellow. \n\nWhat color I'm thinking of?");
+
+		guesses += 1;
+		finished = check_guess();
+
+	}
+	}
+
+	function check_guess(){
+		if(!check_color()){
+			alert("I don't recognize that color");
+			return false;
+		}
+
+		if(user_guess > target){
+			alert("Your input is alphabetically higher than mine!");
+			return false;
+		}
+
+		if(user_guess < target){
+			alert("Your input is alphabetically lower than mine!");
+			return false;
+		}
+
+		if(user_guess == target){
+			body.style.background = target;
+			alert("You are right\n\nYou took " + guesses + " guesses.");
+			return true;
+		}
+		
+	}
+
+	function check_color(){
+		switch(user_guess){
+			case "blue":
+			case "cyan":
+			case "gold":
+			case "gray":
+			case "green":
+			case "magenta":
+			case "orange":
+			case "red":
+			case "white":
+			case "yellow":
+				return true;
+			default:
+				return false;
+		}
+		
+	}
+
+	
+
+	</script>
+</body>
+</html>
