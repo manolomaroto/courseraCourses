@@ -1,0 +1,25 @@
+/* Styles for h1 heading*/
+h1{
+	/* font without serif*/
+	font-family: sans-serif;
+	/* font color*/
+	color: cadetblue;
+	/*Space between leters*/
+	letter-spacing: 3px;
+
+}
+/*Styles with the mouse over the heading*/
+h1:hover{
+	/* font color*/
+	color: firebrick;
+}
+
+/* Styles for a narrow device*/
+@media (max-width:500px){
+	h1{
+		/* monospace font*/
+		font-family: monospace;
+		/*Some shadow*/
+		text-shadow: 2px 2px m;
+	}
+}

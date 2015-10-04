@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Matching game</title>
+	<style type="text/css">
+		img{
+			position: absolute;
+		}
+		div{
+			position: absolute;
+			width: 500px;
+			height: 500px;
+		}
+		#rightside{
+			left: 500px;
+			border-left: 1px solid #000;
+		}
+	</style>
+</head>
+<body onload="generateFaces()">
+	<h1>Matching Game</h1>
+	<h3>Click on the extra smiling face on the left</h3>
+	<div id="leftside">
+		
+	</div>
+	<div id="rightside">
+		
+	</div>
+	<script type="text/javascript">
+	var numberOfFaces = 5;
+	var theLeftSide = document.getElementById("leftside");
+	var theRightSide = document.getElementById("rightside");
+	var theBody = document.getElementsByTagName("body")[0];
+	var hola = document.getElementsByTagName("html")[1];
+
+
+	function generateFaces(){
+		for(var i = 0; i < numberOfFaces; i++){
+			var cara = document.createElement("img");
+			cara.src="http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+			var topPosition = Math.floor(Math.random() * 400);
+			var leftPosition = Math.floor(Math.random() * 400);
+			cara.style.top = topPosition + "px";
+			cara.style.left = leftPosition + "px";
+			
+			theLeftSide.appendChild(cara);
+		}
+	var leftSideImages = theLeftSide.cloneNode(true);
+	leftSideImages.lastChild.remove();
+	theRightSide.appendChild(leftSideImages);
+	theLeftSide.lastChild.onclick = function nextLevel(event){
+			removeLeftSideFaces();
+			removeRightSideFaces();
+			event.stopPropagation();
+			numberOfFaces +=5;
+			generateFaces();
+		}
+		
+	theBody.onclick = function gameOver(){
+		alert("Game over");
+		theBody.onclick = null;
+		theLeftSide.lastChild.onclick = null;
+		removeLeftSideFaces();
+		removeRightSideFaces();
+	}
+	
+
+	}
+
+	function removeLeftSideFaces(){
+		while(theLeftSide.lastChild != theLeftSide[0]){
+			theLeftSide.lastChild.remove();
+		}
+	}
+
+	function removeRightSideFaces(){
+		while(theRightSide.lastChild != theRightSide[0]){
+			theRightSide.lastChild.remove();
+		}
+	}
+
+	
+	</script>	
+</body>
+</html>
