@@ -1,0 +1,92 @@
+.flag{
+	height: 20px;  /* set the height of the img */
+	width: 20px;   /* set the width of the img */
+	float:right;   /* align to the right */
+}
+
+h2{
+	font-family:serif;  /* set the sort of the font */
+	font-size:20px;		/* set the size of the font */
+}
+
+.myLink{
+	text-decoration:none; /* remove the under line */
+	color:green;		  /* set the color of the text */
+}
+
+#myFoot{
+	font-size:15px; 	
+	color:red;
+}
+
+
+#sideMenu {
+		list-style:none; /* remove the point that use to appear in the list */
+		padding:0px;
+       }
+	   
+	   
+.myLeftMenu{
+	padding-top: 10px;			/* set the distance from top */
+	padding-bottom: 10px;		/* set the distance from bottom */
+	border:1px solid black;     /* paint a black border */
+	margin-bottom:2px;			/* set the distance among objects from the bottom */
+}
+
+.myLeftMenu:hover{
+	background:#F0F0F0;		/* set the backcolo when the mouse pass over the item */
+	cursor:hand;			/* change the mouse cursor to show a hand */
+}
+
+#mainImg{
+
+	padding:0px;
+	width:100%;
+
+}
+
+#headImg{
+	font-size: 25px;
+	padding-bottom: 5px;
+	text-shadow: 2px 3px #F0F0F0;	/* draw a shadow behind the text */
+}
+
+#textImg{
+	text-align:justify; /* justify the text */
+	font-size:20px;
+
+}
+
+#aboutMe{
+	padding-left:10px;
+
+}
+
+
+
+
+@media (max-width: 767px){
+	.flag{
+		/* we set the possition of the flags under the menu */
+		float:left;
+	}
+}
+
+/* if the width is narrow, we change font size of the text */
+@media (max-width: 300px)  {
+	h1{
+		font-size:20px;
+	}
+	h2{
+		font-size:15px;
+	}
+	#myFoot{
+		font-size:10px;
+	}
+	#headImg{
+		font-size:15px;
+	}
+	#textImg{
+		font-size:12px;
+	}
+}

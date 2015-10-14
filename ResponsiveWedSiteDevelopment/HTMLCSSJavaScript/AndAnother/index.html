@@ -1,0 +1,182 @@
+<html>
+	<head>
+		<title> Fernán Núñez, my birthplace </title>
+		<link rel="stylesheet"  type="text/css" href="bootstrap.css" />
+		<link rel="stylesheet"  type="text/css" href="styles.css" />
+		<script src="jquery-1.11.3.min.js"></script>
+		<!-- this tag allow use the UTF-8 codification, which is necessary to use spanish character "ñ" a use vowels with spanish accent -->
+		<!-- I'm sorry but my town isn't it so important to have its own english traslation :( -->
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	</head>
+	
+	<body>
+		<div class ="container" >	
+			<div class = "row">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class = "col-md-6">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="index.html">Index</a></li>
+								<li><a href="about_me.html">About me</a></li>
+							</ul>
+						</div>
+						<div class = "col-md-6">
+							<ul class = "nav navbat-nav">
+								<li> <img class="flag" src="flag_uk.png" alt="en" onclick="translateWeb(false)" /> </li>
+								<li> <img class="flag" src="es.png" alt="es" onclick="translateWeb(true)" /--> </li>
+							</ul>
+						</div>
+
+					</div>
+				</nav>
+			</div>
+			
+			<hr/>
+			
+			<!-- Header text -->
+			<h1 id="myHeader"> Welcome to my birthplace, <span style="color:blue">Fernán Núñez</span></h1>
+			
+			<!-- Subheader text -->
+			<h2 id="subHeader" >I want to show you a few curiosities about a unknown little piece of 
+					<a id="link_spain" class="myLink" href="https://en.wikipedia.org/wiki/Spain"> Spain</a>, 
+					a small village called <a class="myLink" href="https://es.wikipedia.org/wiki/Fern%C3%A1n_N%C3%BA%C3%B1ez">Fernán Núñez </a> 
+					near to <a id ="link_cordoba" class="myLink" href="https://en.wikipedia.org/wiki/C%C3%B3rdoba,_Andalusia"> Cordoba </a> 
+			<h2>
+		
+		
+			<div class = "row">
+				<div class = "col-md-2 myLeftSide">
+				    <div>
+						<ul id= "sideMenu">
+								<li id = "ml0" class ="myLeftMenu">General</li>
+								<li id = "ml1" class ="myLeftMenu">Location</li>
+								<li id = "ml2" class ="myLeftMenu">Moro, the funerals dog</li> 
+								<li id = "ml3" class ="myLeftMenu">The May cross</li> 
+						</ul>
+					</div>
+				</div>
+				<div class = "col-md-10">
+					<div id = "headImg"> Sunshine in Fernán Núñez </div>
+					<div class = "col-md-8"> <img id = "mainImg" = src = "vista_general.jpg" alt = "vista de Fernán Núñez"/> </div>
+					<div class = "col-md-4" id = "textImg"> <p> This is a beatiful summer sunshine, is awesome </p> </div>
+				</div>
+			</div>
+		
+
+		&nbsp;
+		<div id = "myFoot"> All this pictures had been taken from this blog 
+			<a href="http://fernannunezimagen.blogspot.com.es/"> http://fernannunezimagen.blogspot.com.es/</a>. I encourage you so much to visit it and
+			find out more curiosities and uses about my town </div>
+		</div>
+	</body>
+	
+	<script> 
+		//definition of variables that will be use in the click function of the side menu items
+		
+		//source of imgs
+		str_src_location = "location.jpg";
+		str_src_moro = "moro_escultura.jpg";
+		str_src_mayCross = "cruz_borriquita.jpg";
+		str_src_general = "vista_general.jpg";
+		
+		
+		//text to head images
+		str_head_general = "Sunshine in Fernán Núñez";
+		str_head_location = "Map of Andalusia";
+		str_head_moro = "Moro's sculture"
+		str_head_mayCross = "May Cross";
+		
+		
+		//text to explain imgages
+		str_text_location = " Fernán Núñez is to close to Cordoba. We are so close from Malaga too, varely 120 kms. I hope you have time to visit us in your next " +
+							" travel around Spain ";
+		
+		str_text_moro = " This is a strange case which happends at the final years of 70's and the earliest 80's. Moro was a dog who used to accompany " +
+						" the deceased people from their house to the church and to the church, once the funeral had over, until the cementery. In these " +
+						" days the tradition ordered, take the deceased and carry him on shoulder until the cementery (inside his box obviously). His (yes, " +
+						" I can't use it to refer him) gift was so bigger than they wait the car, which brought someone from Fernán Núñez who had died outside the village, " + 
+						" at the beginning of the town, even sometimes he could sense the dead and then slept in front on a house of someone who died these night ";
+						
+		str_text_mayCruss = " Thas tradition is a curious mix between pagan and religious celebration, the origin is the celebration of the spring but they use for that " +
+							" the cross catholic simbol. People decorate with flowers a big cross ubicated in the middle of the street, and sorrounded that cross all " +
+							" are decorated as ancient country house and there is a small bar where you can taste traditional foods and drinks. When I was kid, these bars " +
+							" used to be useful to collect money for various good causes, help damaged from a natural disaster, restore ancient building, I remember an special " +
+							" case, a truck driver had an accident and lost the use of his legs, that cross collected a lot of money to help him and his family";
+		
+		str_text_general = "This is a beatiful summer sunshine, is awesome";
+		
+		
+		$(".myLeftMenu").click(function(){
+			
+			//define the variable which store the source of the img
+			str_source_image = "";
+			//define the variable which store the text of the heading 
+			str_head =""
+			//define the variable which store the explain text of the image
+			str_text  ="";
+
+			//we compare the 'id' from the object which trigger the event with the possibles ids
+			if ( $(this).attr('id') == "ml0"){
+				//set the source of the image
+				str_source_image = str_src_general;
+				//set the text of the heading
+				str_head = str_head_general;
+				//set the explain text
+				str_text = str_text_general;
+			} else if ( $(this).attr('id') == "ml1"){
+				str_source_image = str_src_location;
+				str_head = str_head_location;
+				str_text = str_text_location;
+			} else if ( $(this).attr('id') == "ml2"){
+				str_source_image = str_src_moro;
+				str_head = str_head_moro;
+				str_text = str_text_moro;
+			} else if ( $(this).attr('id') == "ml3"){
+				str_source_image = str_src_mayCross;
+				str_head = str_head_mayCross;
+				str_text = str_text_mayCruss;
+			}
+			
+			//once the variables are setting
+			
+			//change the attribute src for the source setting before
+			$("#mainImg").attr("src", str_source_image);
+			//change the text of the heading
+			$("#headImg").text(str_head);
+			//change the explain text
+			$("#textImg").text(str_text);
+			
+		});
+		
+		
+		//this function translate a certain parts of the text and change the links from the wikipedia english version to spanish version and viceversa
+		function translateWeb(spanish){
+			if (spanish){
+				//change the link to the id "link_spain"
+				$("#link_spain").attr("href", "https://es.wikipedia.org/wiki/Espa%C3%B1a");
+				//change the text to the id "link_spain"
+				$("#link_spain").html("España");
+				//change the link
+				$("#link_cordoba").attr("href", "https://es.wikipedia.org/wiki/C%C3%B3rdoba_(Espa%C3%B1a)");
+				//change the text
+				$("#link_cordoba").html("Córdoba");
+				//change the text and include a span tag inside
+				$("#myHeader").html('Bienvenidos a mi casa, <span style="color:blue"> Fernán Núñez</span> ');
+				alert("Wikipedia links change to spanish version");
+				
+			}else
+			{
+				$("#link_spain").attr("href", "https://en.wikipedia.org/wiki/Spain");
+				$("#link_spain").html("Spain");
+				$("#link_cordoba").attr("href", "https://en.wikipedia.org/wiki/C%C3%B3rdoba,_Andalusia");
+				$("#link_cordoba").html("Cordoba");
+				$("#myHeader").html('Welcome to my birthplace, <span style="color:blue">Fernán Núñez</span>');
+				alert("Wikipedia links change to english version");
+			}
+		}
+
+	</script>
+
+
+
+</html>

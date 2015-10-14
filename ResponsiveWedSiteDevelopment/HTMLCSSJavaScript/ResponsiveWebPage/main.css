@@ -1,0 +1,14 @@
+
+body {
+  margin: 0;
+  color: crimson;
+  font-size: 20px;
+}
+
+button{
+    border-radius: 10px;
+}
+.result {
+    border: 2px solid #456234;
+    
+}

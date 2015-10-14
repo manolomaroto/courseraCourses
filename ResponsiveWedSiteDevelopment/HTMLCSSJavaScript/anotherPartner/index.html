@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Tell the browser how to read the document. -->
+    <meta charset="utf-8">
+    <!-- Tells the browser what the title of this page should be. -->
+    <title>Final Project</title>
+
+    <!-- Load the page styles. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <header id="header" class="text-center">
+      <h1>Click on a weather buttom to help the bears plan their day!</h1>
+      <!-- Tagline is a id to attach a message to. Message is linked to weather button choice -->
+      <div id="tagline"></div>
+    </header>
+    <section id="main">
+      <!-- Use Bootstrap container to make it repsonsive -->
+      <div class="container">
+        <div class="row">
+          <!-- Create the column of weather selection buttons-->
+          <div class="col-sm-4">
+            <ul class="list-unstyled">
+              <li>
+                <!-- Bright sunny day -->
+                <a href="#" id="sunny" class="btn text-right weather" data-toggle="tooltip" data-placement="bottom" title="Break out the Sun Block!">
+                  <i class=ion-ios-sunny></i>Sunny Bears</a>
+                </li>
+              <li>
+                <!-- Partly sunny day -->
+                <a href="#" id="partlysunny" class="btn text-right weather" data-toggle="tooltip" data-placement="bottom" title="Ah, a little cooler.">
+                <i class=ion-ios-partlysunny></i>Partly Sunny Bears</a>
+              </li>
+              <li>
+                <!-- Cloudy day -->
+                <a href="#" id="cloudy" class="btn text-right weather" data-toggle="tooltip" data-placement="bottom" title="California Bears are praying for rain.">
+                <i class=ion-ios-cloudy></i>Cloudy Bears</a>
+              </li>
+              <li>
+                <!-- Rainy day -->
+                <a href="#" id="rainy" class="btn text-right weather" data-toggle="tooltip" data-placement="bottom" title="California Bears are dancing in the rain.">
+                <i class=ion-ios-rainy></i>Rainy Bears</a>
+              </li>
+              <li>
+                <!-- Thunderstorms -->
+                <a href="#" id="thunderstorm" class="btn text-right weather" data-toggle="tooltip" data-placement="bottom" title="Bears are hiding from T-Storms.">
+                <i class=ion-ios-thunderstorm></i>Scared Bears</a>
+              </li>
+              <li>
+                <!-- Snowy day -->
+                <a href="#" id="snowy" class="btn text-right weather" data-toggle="tooltip" data-placement="bottom" title="Bears head to Tahoe to ski.">
+                <i class=ion-ios-snowy></i>Snowy Bears</a>
+              </li>
+              <li>
+                <!-- Night time -->
+                <a href="#" id="night" class="btn text-right weather" data-toggle="tooltip" data-placement="bottom" title="Good Night Moon... Good Night Bears.">
+                <i class=ion-ios-moon></i>Sleepy Bears</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Display a column of bear images -->
+          <div class="col-sm-4">
+            <a href="#" class="dark"> <img id="bears1" class="dark" src="http://placebear.com/300/200" alt="Bear Image"></a>
+            <a href="#" class="dark"> <img id="bears2" class="dark" src="http://placebear.com/300/400" alt="Bear Image"></a>
+            <a href="#" class="dark"> <img id="bears3" class="dark" src="http://placebear.com/300/250" alt="Bear Image"></a>
+          </div>
+          <!-- Javascript will update this well depending upon which weather button was clicked -->
+          <div class="col-sm-4">
+            <section id="well">
+            </section>
+          </div>
+      </div>
+    </div>
+    </section>
+
+  <script src="final.js"></script>
+
+  </body>
+</html>

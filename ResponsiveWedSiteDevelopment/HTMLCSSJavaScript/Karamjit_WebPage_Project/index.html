@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Karamjit Kang" />
+    <meta name="description" content="My Personal Page" />
+    <meta name="keywords" content="Personal Goals, Javascript" />
+    <title>Welcome To My Page</title>
+    <link href="/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+    <script src="/interactive.js" type="text/javascript"></script>
+     
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+            <input type="button"  value=" Click ME - This will take you to the bottom of the page" onclick="parent.location='#button'" />
+            <div id="indexContainer">
+                <section>
+                    <p id="indexDate" title="Todays Date and Time"><ins></ins></p>
+                    <p> -- The above Date/Time is created using Javascript -- </p>
+                </section>
+                <header id="indextop">
+                    <p> -- Hover over this section to see the Text/Size/Color change --</p>
+                    <h1 class="bg-primary" id="indexTitle" title="Karamjit Web Page">Welcome To<br /> Karamjit's Personal Page</h1>
+                </header>           
+                <section>
+                    <noscript><p>Please enable JavaScript to use this page!</p></noscript>
+                </section>
+                <section id="indexmid">
+                    <div id="indexDis">
+                        <button id="mainBut">Change the text content for the below h3 tag</button>
+                        <h3>
+                            -- This Text Should Change once Button is Clicked --
+                        </h3>
+                        <h2 title="Please Click Button">Lets See What Happens</h2>
+                    </div>
+                    <img class="img-thumnail" id="indexPic" src="mandelbrot.png" title="Mandelbrot" alt=" Color Image of Mandelbrot Fractal " />
+                </section>
+                <br>
+                <section id="indexBot">
+                    <input id="indexButton" type="button" title="Click On Me" value="Lets Start" onclick="browDet();" />
+                    <br />
+                    <br />
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <br /><p><a id="button"></a></p>
+                            <p id="browserDetDis" class="alert alert-success" role="alert"><in class="browserDetStyle"></in>-- Browser Details will be shown here, after clicking on the button --</p>
+                        </div>
+                </section>
+                <br />
+                <footer  class="footer">
+                    <h6 title="Copyright">Website Designed By <br> Copyright &copy; 2015 Karamjit Kang</h6>
+                </footer>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
